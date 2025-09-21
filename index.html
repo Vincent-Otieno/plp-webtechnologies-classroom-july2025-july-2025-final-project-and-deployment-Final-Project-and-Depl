@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeReport - Confidential GBV Reporting Platform</title>
+    <meta name="description" content="SafeReport provides a secure, confidential platform for reporting gender-based violence and connecting with support resources.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Quick Exit Banner -->
+    <div class="quick-exit-banner">
+        <div class="container">
+            <span class="warning-text">⚠️ If you're in immediate danger, call emergency services</span>
+            <button class="quick-exit-btn" onclick="quickExit()">Quick Exit</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">🛡️</div>
+                <span class="brand-name">SafeReport</span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="report.html" class="nav-link">Report Incident</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+            <button class="quick-exit-btn desktop-only" onclick="quickExit()">⚠️ Quick Exit</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="report.html" class="mobile-nav-link">Report Incident</a>
+        <a href="resources.html" class="mobile-nav-link">Resources</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <button class="quick-exit-btn mobile-exit" onclick="quickExit()">⚠️ Quick Exit</button>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">You Are Not Alone</h1>
+                    <p class="hero-description">
+                        SafeReport provides a secure, confidential platform to report gender-based violence 
+                        and connect with support resources. Your safety and privacy are our highest priorities.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="report.html" class="btn btn-primary">Report an Incident</a>
+                        <a href="resources.html" class="btn btn-secondary">Get Support Resources</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Safety Notice -->
+        <section class="safety-notice">
+            <div class="container">
+                <div class="notice-content">
+                    <span class="notice-icon">⚠️</span>
+                    <div class="notice-text">
+                        <strong>Safety First:</strong> If you're in immediate danger, please call 254 or your local emergency services.
+                        <br><small>Use the "Quick Exit" button at any time to safely leave this site.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Safe, Secure, Confidential</h2>
+                    <p>Our platform is designed with your safety in mind, providing multiple ways to seek help and report incidents.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔒</div>
+                        <h3>Secure & Private</h3>
+                        <p>All reports are encrypted and stored securely. You can choose to report anonymously or provide contact information for follow-up support.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📞</div>
+                        <h3>24/7 Support</h3>
+                        <p>Access to trained counselors and support specialists around the clock. Multiple ways to get help including phone, text, and online chat.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">👥</div>
+                        <h3>Community Resources</h3>
+                        <p>Connect with local support services, legal aid, counseling services, and other resources in your community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Contacts -->
+        <section class="emergency-contacts">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Need Immediate Help?</h2>
+                    <p>These resources are available 24/7 for immediate support</p>
+                </div>
+                <div class="contacts-grid">
+                    <div class="contact-card emergency">
+                        <h3>🚨 Emergency Services</h3>
+                        <div class="contact-number">254</div>
+                        <p>For immediate danger or medical emergency</p>
+                    </div>
+                    <div class="contact-card hotline">
+                        <h3>📞 National Hotline</h3>
+                        <div class="contact-number">+254-700-799-723</div>
+                        <p>24/7 confidential support</p>
+                    </div>
+                    <div class="contact-card text">
+                        <h3>💬 Crisis Text Line</h3>
+                        <div class="contact-number">Text HOME to 254741</div>
+                        <p>24/7 crisis support via text</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready to Take the First Step?</h2>
+                    <p>Whether you're reporting an incident or seeking resources, we're here to support you every step of the way.</p>
+                    <div class="cta-buttons">
+                        <a href="report.html" class="btn btn-light">Report an Incident</a>
+                        <a href="resources.html" class="btn btn-outline">Browse Resources</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo">🛡️</div>
+                        <span class="brand-name">SafeReport</span>
+                    </div>
+                    <p>A safe, confidential platform for reporting gender-based violence. Your safety and privacy are our top priorities.</p>
+                    <div class="footer-contacts">
+                        <div>📞 24/7 Helpline: +254-700-799-723</div>
+                        <div>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="177472777768757357746663607760756875733974697c">[email&#160;protected]</a></div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="report.html">Report Incident</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul>
+                        <li><strong style="color: #ef4444;">Emergency:</strong> 254</li>
+                        <li><strong style="color: #8b5cf6;">National Hotline:</strong><br>+254-700-799-723</li>
+                        <li><strong style="color: #8b5cf6;">Crisis Text Line:</strong><br>Text HOME to 254741</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SafeReport. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>This site uses secure encryption to protect your privacy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+</body>
+</html>

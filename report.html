@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report an Incident - SafeReport</title>
+    <meta name="description" content="Secure, confidential incident reporting form for gender-based violence cases.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Quick Exit Banner -->
+    <div class="quick-exit-banner">
+        <div class="container">
+            <span class="warning-text">⚠️ If you're in immediate danger, call emergency services</span>
+            <button class="quick-exit-btn" onclick="quickExit()">Quick Exit</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">🛡️</div>
+                <span class="brand-name">SafeReport</span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="report.html" class="nav-link active">Report Incident</a>
+                <a href="resources.html" class="nav-link">Resources</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+            <button class="quick-exit-btn desktop-only" onclick="quickExit()">⚠️ Quick Exit</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="report.html" class="mobile-nav-link">Report Incident</a>
+        <a href="resources.html" class="mobile-nav-link">Resources</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <button class="quick-exit-btn mobile-exit" onclick="quickExit()">⚠️ Quick Exit</button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="report-page">
+        <div class="container">
+            <!-- Header -->
+            <div class="page-header">
+                <h1>Report an Incident</h1>
+                <p>Your safety is our priority. This form is secure and confidential. You can choose to report anonymously or provide contact information for support.</p>
+            </div>
+
+            <!-- Safety Notice -->
+            <div class="safety-notice">
+                <div class="notice-content">
+                    <span class="notice-icon">⚠️</span>
+                    <div class="notice-text">
+                        <strong>Safety First:</strong> If you're in immediate danger, please call 254. This form is for reporting incidents that have already occurred.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Message (hidden by default) -->
+            <div id="successMessage" class="success-card" style="display: none;">
+                <div class="success-icon">✅</div>
+                <h2>Report Submitted Successfully</h2>
+                <p>Thank you for your courage in reporting this incident. Your report has been received and will be reviewed by our trained professionals.</p>
+                <div class="success-details">
+                    <h3>What happens next:</h3>
+                    <ul>
+                        <li>Your report will be reviewed within 24 hours</li>
+                        <li>If you provided contact information, we may reach out for follow-up</li>
+                        <li>You will receive resources and support information via email</li>
+                        <li>All information is kept strictly confidential</li>
+                    </ul>
+                </div>
+                <p class="report-id">Report ID: <strong id="reportId"></strong><br>Please save this ID for your records.</p>
+            </div>
+
+            <!-- Report Form -->
+            <form id="reportForm" class="report-form">
+                <!-- Privacy Options -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">🔒 Privacy Options</h2>
+                        <p class="card-description">Choose how you'd like to submit this report</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="anonymous" name="anonymous">
+                            <label for="anonymous">Submit this report anonymously</label>
+                        </div>
+                        <p class="help-text">Anonymous reports help us understand patterns but limit our ability to provide direct support.</p>
+                    </div>
+                </div>
+
+                <!-- Incident Details -->
+                <div class="card">
+                    <div class="card-header">
+                        <h2 class="card-title">Incident Details</h2>
+                        <p class="card-description">Please provide as much detail as you're comfortable sharing</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label for="incidentType" class="form-label">Type of Incident *</label>
+                            <select id="incidentType" name="incidentType" class="form-select" required>
+                                <option value="">Select incident type</option>
+                                <option value="domestic-violence">Domestic Violence</option>
+                                <option value="sexual-assault">Sexual Assault</option>
+                                <option value="harassment">Harassment</option>
+                                <option value="stalking">Stalking</option>
+                                <option value="workplace-harassment">Workplace Harassment</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <div id="incidentType-error" class="form-error"></div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="incidentDate" class="form-label">Date of Incident</label>
+                                <input type="date" id="incidentDate" name="incidentDate" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="incidentTime" class="form-label">Time of Incident</label>
+                                <input type="time" id="incidentTime" name="incidentTime" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location" class="form-label">Location (optional)</label>
+                            <input type="text" id="location" name="location" class="form-input" placeholder="City, state or general area">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="form-label">Description of Incident *</label>
+                            <textarea id="description" name="description" class="form-textarea" placeholder="Please describe what happened. Include as much detail as you're comfortable sharing." required></textarea>
+                            <div id="description-error" class="form-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="perpetratorInfo" class="form-label">Perpetrator Information (optional)</label>
+                            <textarea id="perpetratorInfo" name="perpetratorInfo" class="form-textarea" placeholder="Any information about the perpetrator (name, relationship to you, description, etc.)"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="witnessInfo" class="form-label">Witness Information (optional)</label>
+                            <textarea id="witnessInfo" name="witnessInfo" class="form-textarea" placeholder="Were there any witnesses? Please provide their information if available."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="card" id="contactCard">
+                    <div class="card-header">
+                        <h2 class="card-title">Contact Information</h2>
+                        <p class="card-description">This information allows us to provide you with support and follow-up resources</p>
+                    </div>
+                    <div class="card-content">
+                        <div class="form-group">
+                            <label for="reporterName" class="form-label">Your Name *</label>
+                            <input type="text" id="reporterName" name="reporterName" class="form-input" placeholder="Full name">
+                            <div id="reporterName-error" class="form-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reporterEmail" class="form-label">Email Address *</label>
+                            <input type="email" id="reporterEmail" name="reporterEmail" class="form-input" placeholder="your.email@example.com">
+                            <div id="reporterEmail-error" class="form-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="reporterPhone" class="form-label">Phone Number (optional)</label>
+                            <input type="tel" id="reporterPhone" name="reporterPhone" class="form-input" placeholder="(555) 123-4567">
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="consentToContact" name="consentToContact">
+                            <label for="consentToContact">I consent to being contacted by support services</label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="emergencyContact" name="emergencyContact">
+                            <label for="emergencyContact">This is an emergency - please contact me immediately</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Notice -->
+                <div class="card security-card">
+                    <div class="card-content">
+                        <div class="security-notice">
+                            <div class="security-icon">🛡️</div>
+                            <div>
+                                <h3>Your Information is Secure</h3>
+                                <ul>
+                                    <li>All data is encrypted and stored securely</li>
+                                    <li>Only trained professionals have access to reports</li>
+                                    <li>Your information will never be shared without your consent</li>
+                                    <li>You can request deletion of your data at any time</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-submit">
+                    <button type="submit" class="btn btn-primary btn-large">Submit Report</button>
+                    <p class="submit-note">By submitting this report, you acknowledge that you have read and agree to our privacy policy.</p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo">🛡️</div>
+                        <span class="brand-name">SafeReport</span>
+                    </div>
+                    <p>A safe, confidential platform for reporting gender-based violence. Your safety and privacy are our top priorities.</p>
+                    <div class="footer-contacts">
+                        <div>📞 24/7 Helpline: +254-700-799-723</div>
+                        <div>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4c3f393c3c233e383c3f2e3c3e0c3f2d2a293e293c233e3822392431">[email&#160;protected]</a></div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="report.html">Report Incident</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul>
+                        <li><strong style="color: #ef4444;">Emergency:</strong> 254</li>
+                        <li><strong style="color: #8b5cf6;">National Hotline:</strong><br>+254-700-799-723</li>
+                        <li><strong style="color: #8b5cf6;">Crisis Text Line:</strong><br>Text HOME to 254741</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SafeReport. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>This site uses secure encryption to protect your privacy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+    <script src="report.js"></script>
+</body>
+</html>

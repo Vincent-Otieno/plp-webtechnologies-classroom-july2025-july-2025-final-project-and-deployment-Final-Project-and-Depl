@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Resources - SafeReport</title>
+    <meta name="description" content="Comprehensive support resources, helplines, and services for survivors of gender-based violence.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Quick Exit Banner -->
+    <div class="quick-exit-banner">
+        <div class="container">
+            <span class="warning-text">⚠️ If you're in immediate danger, call emergency services</span>
+            <button class="quick-exit-btn" onclick="quickExit()">Quick Exit</button>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="logo">🛡️</div>
+                <span class="brand-name">SafeReport</span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="report.html" class="nav-link">Report Incident</a>
+                <a href="resources.html" class="nav-link active">Resources</a>
+                <a href="about.html" class="nav-link">About</a>
+            </nav>
+            <button class="quick-exit-btn desktop-only" onclick="quickExit()">⚠️ Quick Exit</button>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="report.html" class="mobile-nav-link">Report Incident</a>
+        <a href="resources.html" class="mobile-nav-link">Resources</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <button class="quick-exit-btn mobile-exit" onclick="quickExit()">⚠️ Quick Exit</button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="resources-page">
+        <div class="container">
+            <!-- Header -->
+            <div class="page-header">
+                <h1>Support Resources</h1>
+                <p>You don't have to face this alone. Here are resources and support services available to help you through this difficult time.</p>
+            </div>
+
+            <!-- Emergency Contacts -->
+            <section class="emergency-section">
+                <h2>📞 Emergency Contacts</h2>
+                <div class="contacts-grid">
+                    <div class="contact-card emergency">
+                        <h3>🚨 Emergency Services</h3>
+                        <div class="contact-number">254</div>
+                        <p>For immediate danger or medical emergency</p>
+                        <button class="btn btn-secondary" onclick="window.location.href='tel:911'">Call Now</button>
+                    </div>
+                    <div class="contact-card hotline">
+                        <h3>📞 National Domestic Violence Hotline</h3>
+                        <div class="contact-number">+254-700-799-723</div>
+                        <p>Confidential support for domestic violence survivors</p>
+                        <div class="contact-details">
+                            <span class="availability">24/7 Available</span>
+                            <button class="btn btn-secondary" onclick="window.location.href='tel:18007997233'">Call Now</button>
+                        </div>
+                    </div>
+                    <div class="contact-card hotline">
+                        <h3>📞 RAINN National Sexual Assault Hotline</h3>
+                        <div class="contact-number">+254-800-799-723</div>
+                        <p>Support for sexual assault survivors</p>
+                        <div class="contact-details">
+                            <span class="availability">24/7 Available</span>
+                            <button class="btn btn-secondary" onclick="window.location.href='tel:18006564673'">Call Now</button>
+                        </div>
+                    </div>
+                    <div class="contact-card text">
+                        <h3>💬 Crisis Text Line</h3>
+                        <div class="contact-number">Text HOME to 254741</div>
+                        <p>24/7 crisis support via text message</p>
+                        <button class="btn btn-secondary" onclick="copyToClipboard('741741')">Copy Number</button>
+                    </div>
+                    <div class="contact-card hotline">
+                        <h3>📞 National Suicide Prevention Lifeline</h3>
+                        <div class="contact-number">888</div>
+                        <p>Mental health crisis support</p>
+                        <div class="contact-details">
+                            <span class="availability">24/7 Available</span>
+                            <button class="btn btn-secondary" onclick="window.location.href='tel:988'">Call Now</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Local Resources -->
+            <section class="local-resources">
+                <h2>🏢 Local Support Services</h2>
+                <div class="resources-grid">
+                    <div class="resource-category">
+                        <div class="category-icon">📋</div>
+                        <h3>Legal Aid</h3>
+                        <ul>
+                            <li>Legal Aid Society - Free legal assistance</li>
+                            <li>Domestic Violence Legal Clinic</li>
+                            <li>Pro Bono Attorney Network</li>
+                            <li>Court Advocacy Services</li>
+                        </ul>
+                        <button class="btn btn-outline">Find Local Services</button>
+                    </div>
+                    <div class="resource-category">
+                        <div class="category-icon">❤️</div>
+                        <h3>Counseling Services</h3>
+                        <ul>
+                            <li>Trauma-Informed Therapy</li>
+                            <li>Support Groups for Survivors</li>
+                            <li>Family Counseling Services</li>
+                            <li>EMDR Therapy Specialists</li>
+                        </ul>
+                        <button class="btn btn-outline">Find Counselors</button>
+                    </div>
+                    <div class="resource-category">
+                        <div class="category-icon">🛡️</div>
+                        <h3>Safety & Shelter</h3>
+                        <ul>
+                            <li>Emergency Shelter Services</li>
+                            <li>Transitional Housing Programs</li>
+                            <li>Safety Planning Assistance</li>
+                            <li>Relocation Support Services</li>
+                        </ul>
+                        <button class="btn btn-outline">Find Shelter</button>
+                    </div>
+                    <div class="resource-category">
+                        <div class="category-icon">👥</div>
+                        <h3>Community Support</h3>
+                        <ul>
+                            <li>Survivor Support Groups</li>
+                            <li>Peer Mentorship Programs</li>
+                            <li>Community Advocacy Organizations</li>
+                            <li>Educational Workshops</li>
+                        </ul>
+                        <button class="btn btn-outline">Join Community</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Safety Tips Slider -->
+            <section class="safety-tips">
+                <h2>🛡️ Safety Tips & Planning</h2>
+                <div class="slider-container" id="safetySlider">
+                    <div class="slider">
+                        <div class="slide active">
+                            <div class="tip-card">
+                                <h3>Create a Safety Plan</h3>
+                                <p>Develop a personalized plan for staying safe at home, work, and in public. Include emergency contacts, safe places to go, and important documents to keep ready.</p>
+                                <div class="tip-actions">
+                                    <button class="btn btn-secondary">Download Safety Plan Template</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="tip-card">
+                                <h3>Trust Your Instincts</h3>
+                                <p>If something feels wrong or unsafe, trust your gut feelings. Your instincts are often right, and it's better to be safe than sorry.</p>
+                                <div class="tip-actions">
+                                    <button class="btn btn-secondary">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="tip-card">
+                                <h3>Document Everything</h3>
+                                <p>Keep records of incidents, including photos, messages, and witness information. Store copies in a safe place away from your home.</p>
+                                <div class="tip-actions">
+                                    <button class="btn btn-secondary">Documentation Guide</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="tip-card">
+                                <h3>Build a Support Network</h3>
+                                <p>Connect with trusted friends, family, and professionals who can help. Having people you can rely on is crucial for your safety and wellbeing.</p>
+                                <div class="tip-actions">
+                                    <button class="btn btn-secondary">Find Support Groups</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="tip-card">
+                                <h3>Secure Your Technology</h3>
+                                <p>Protect your devices and online accounts from unauthorized access. Change passwords regularly and be aware of tracking apps.</p>
+                                <div class="tip-actions">
+                                    <button class="btn btn-secondary">Tech Safety Guide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slider-btn prev-btn" onclick="changeSlide(-1)">❮</button>
+                        <div class="slider-indicators">
+                            <span class="indicator active" onclick="currentSlide(1)"></span>
+                            <span class="indicator" onclick="currentSlide(2)"></span>
+                            <span class="indicator" onclick="currentSlide(3)"></span>
+                            <span class="indicator" onclick="currentSlide(4)"></span>
+                            <span class="indicator" onclick="currentSlide(5)"></span>
+                        </div>
+                        <button class="slider-btn next-btn" onclick="changeSlide(1)">❯</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Online Resources -->
+            <section class="online-resources">
+                <h2>🌐 Online Resources & Information</h2>
+                <div class="online-grid">
+                    <div class="online-card">
+                        <div class="online-icon">📚</div>
+                        <h3>Educational Materials</h3>
+                        <ul>
+                            <li>Understanding GBV and its impacts</li>
+                            <li>Recognizing warning signs</li>
+                            <li>Supporting survivors</li>
+                            <li>Prevention strategies</li>
+                        </ul>
+                        <button class="btn btn-outline">Access Materials</button>
+                    </div>
+                    <div class="online-card">
+                        <div class="online-icon">👥</div>
+                        <h3>Support Communities</h3>
+                        <ul>
+                            <li>Online support groups</li>
+                            <li>Survivor forums</li>
+                            <li>Peer mentorship programs</li>
+                            <li>Virtual counseling sessions</li>
+                        </ul>
+                        <button class="btn btn-outline">Join Community</button>
+                    </div>
+                    <div class="online-card">
+                        <div class="online-icon">📱</div>
+                        <h3>Mobile Apps</h3>
+                        <ul>
+                            <li>Personal safety apps</li>
+                            <li>Emergency alert systems</li>
+                            <li>Evidence documentation tools</li>
+                            <li>Resource locators</li>
+                        </ul>
+                        <button class="btn btn-outline">Download Apps</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 24/7 Support Banner -->
+            <section class="support-banner">
+                <div class="banner-content">
+                    <h2>Remember: Help is Available 24/7</h2>
+                    <p>If you're in crisis or need immediate support, don't hesitate to reach out. Trained professionals are standing by to help you.</p>
+                    <div class="banner-buttons">
+                        <button class="btn btn-light" onclick="window.location.href='tel:2548007997233'">
+                            📞 Call +254-800-799-723
+                        </button>
+                        <button class="btn btn-outline" onclick="copyToClipboard('254741')">
+                            💬 Text HOME to 254741
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo">🛡️</div>
+                        <span class="brand-name">SafeReport</span>
+                    </div>
+                    <p>A safe, confidential platform for reporting gender-based violence. Your safety and privacy are our top priorities.</p>
+                    <div class="footer-contacts">
+                        <div>📞 24/7 Helpline: +254-800-799-723</div>
+                        <div>✉️ <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f784828787988583b784969192859287988583d9988590">[email&#160;protected]</a></div>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="report.html">Report Incident</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Emergency</h3>
+                    <ul>
+                        <li><strong style="color: #ef4444;">Emergency:</strong> 911</li>
+                        <li><strong style="color: #8b5cf6;">National Hotline:</strong><br>+254-800-799-723</li>
+                        <li><strong style="color: #8b5cf6;">Crisis Text Line:</strong><br>Text HOME to 254741</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 SafeReport. All rights reserved. | Privacy Policy | Terms of Service</p>
+                <p>This site uses secure encryption to protect your privacy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
+    <script src="resources.js"></script>
+</body>
+</html>
